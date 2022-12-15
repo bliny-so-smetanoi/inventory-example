@@ -57,7 +57,6 @@ public class HomeController : Controller
         using (ApplicationContext db = new ApplicationContext())
         {
             List<Item> room = db.Items.Where(item => item.RoomNumber == roomNum).ToList();
-            Console.WriteLine(room.Count);
             return View(room);    
         }
         

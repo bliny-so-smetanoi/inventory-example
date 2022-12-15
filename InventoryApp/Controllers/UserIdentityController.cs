@@ -10,6 +10,19 @@ public class UserIdentityController : Controller
         return View();
     }
     
+    public IActionResult Logout()
+    {
+        if (Request.Cookies.ContainsKey("auth"))
+        {
+            Response.Cookies.Delete("auth");
+            return Redirect("/Home/Index");
+        }
+        else
+        {
+            return Ok();
+        }
+    }
+    
     [HttpPost]
     public IActionResult Login(string email, string password)
     {

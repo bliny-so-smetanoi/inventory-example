@@ -4,10 +4,17 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Inventory of AITU!</h1>
+    <h2>Rooms:</h2>
+    <table align="center" style="border: 1px solid black">
     @foreach (var room in Model)
     {
-        <div>Room number: @room.RoomNumber <a href="/Home/Detail?roomNum=@room.RoomNumber">Go</a></div>
+        <tr style="border: 1px solid black; padding: 5px">
+            <th style="padding: 20px; "><img style="border-radius: 20px" width="400" height="200" src="@room.Picture"/></th>
+            <td style="padding: 5px">
+                <div>Room number: @room.RoomNumber <a href="/Home/Detail?roomNum=@room.RoomNumber">Go</a></div>
+            </td>
+        </tr>
     }
+    </table>
 </div>

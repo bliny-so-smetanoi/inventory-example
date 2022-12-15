@@ -46,7 +46,7 @@
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
 <script>
-    if (document.cookie === "auth=1234") {
+    if (document.cookie.includes("auth=1234")) {
         const elem = document.getElementById("navbarId")
         const newElem = document.createElement("li")
         newElem.textContent = "Welcome, user!"
@@ -61,6 +61,19 @@
         addButton1.textContent = "Add Item"
         addButton.append(addButton1)
         elem1.append(addButton)
+        
+        const logoutButton = document.createElement("a")
+        logoutButton.textContent = "Logout"
+        logoutButton.id = "logoutButton"
+        logoutButton.href = "/UserIdentity/Logout"
+        const brake = document.createElement("div")
+        brake.style.width = "20px"
+        elem1.append(brake)
+        elem1.append(logoutButton)
+        
+        const logOut = document.getElementById("logoutButton")
+        
+        
         }
     
 </script>
