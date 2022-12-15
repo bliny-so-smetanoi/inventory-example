@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryApp", "InventoryApp\InventoryApp.csproj", "{53F74518-DF29-4BD8-B36E-CDFD9568BE32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53F74518-DF29-4BD8-B36E-CDFD9568BE32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F74518-DF29-4BD8-B36E-CDFD9568BE32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F74518-DF29-4BD8-B36E-CDFD9568BE32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F74518-DF29-4BD8-B36E-CDFD9568BE32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

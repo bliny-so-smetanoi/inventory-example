@@ -1,0 +1,20 @@
+﻿@model List<Item>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<!DOCTYPE html>
+
+<html>
+<body>
+<div style="display: flex; flex-direction: row">
+      @foreach (var item in Model)
+      {
+          <div>
+          <div>@item.Name Quantity: @item.Quantity</div>
+              <div><img src="@item.Picture"/></div>
+              </div>
+      }
+</div>
+</body>
+</html>
