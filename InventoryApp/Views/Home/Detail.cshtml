@@ -11,9 +11,10 @@
       @foreach (var item in Model)
       {
           <div>
-          <div>@item.Name Quantity: @item.Quantity</div>
+              <a href="/Home/Delete?id=@item.Id">Delete</a>
+              <div>@item.Name Quantity: @item.Quantity</div> <a href="/Home/Edit?id=@item.Id">Edit</a>
               <div><img src="@item.Picture"/></div>
-              </div>
+          </div>
       }
 </div>
 </body>

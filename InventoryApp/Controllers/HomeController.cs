@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Linq;
 using InventoryApp.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using InventoryApp.Models;
@@ -62,6 +63,75 @@ public class HomeController : Controller
         
     }
 
+    
+    public IActionResult Delete(int id)
+    {
+        using (ApplicationContext db = new ApplicationContext())
+        {
+            Item item = db.Items.Where(item => item.Id.Equals(id)).FirstOrDefault();
+
+            db.Items.Remove(item);
+
+            db.SaveChanges();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public IActionResult Edit(EditDto editItem)
+    {
+
+
+        using (ApplicationContext db = new ApplicationContext())
+        {
+            
+            var item = db.Items.Where(item => item.Id == editItem.Id).FirstOrDefault();
+
+            if (editItem.Name != "")
+            {
+                item.Name = editItem.Name;
+            }
+            
+            if (editItem.Picture != "")
+            {
+                item.Picture = editItem.Picture;
+            }
+            
+            if (editItem.Quantity != 0)
+            {
+                item.Quantity = editItem.Quantity;
+            }
+            Console.WriteLine(editItem.RoomNumber);
+            Console.WriteLine(item.RoomNumber);
+            if (editItem.RoomNumber != String.Empty)
+            {
+                item.RoomNumber = editItem.RoomNumber;
+            }
+
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+    }
+
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        ViewData["Id"] = id;
+        
+        return View();
+    }
+
+    public class EditDto
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+        public string RoomNumber { get; set; }
+        public string Picture { get; set; }
+    }
+    
     public IActionResult Privacy()
     {
         return View();

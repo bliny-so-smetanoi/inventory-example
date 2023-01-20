@@ -1,0 +1,31 @@
+﻿@model int
+
+@{
+    
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Edit Item</title>
+</head>
+<body>
+<div>
+    <form method="post">
+        @{
+            <input name="id" type="hidden" value="@ViewData["Id"]"/>
+        }
+        <span>Name</span>
+        <input name="name" type="text"/>
+        <span>Picture URL</span>
+        <input type="text" name="picture"/>
+        <span>Room number</span>
+        <input type="text" name="roomNumber"/>
+        <span>Quantity</span>
+        <input type="text" name="quantity"/>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
